@@ -178,7 +178,7 @@
           select3.addEventListener('change', function() {
         if (Hls.isSupported()) {
           var hls = new Hls();
-          hls.loadSource(selec3t.value);
+          hls.loadSource(select3.value);
           hls.attachMedia(video3);
 	  hls.on(Hls.Events.MANIFEST_PARSED,function() {
 				video3.play();
