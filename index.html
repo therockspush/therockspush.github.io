@@ -65,16 +65,27 @@
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-northoceanbeach/chunklist.m3u8">north ocean beach</option>
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-vicente/chunklist.m3u8">south ocean beach</option>
     </select>																	       															       						       	       <video id="video1"										 muted="muted"></video>								       							       	       	       <script>
-	      var video1 = document.getElementById('video1');
+	var video1 = document.getElementById('video1');
 	var select1 = document.getElementById('url-selector1');
-          select1.addEventListener('change', function() {
-        if (Hls.isSupported()) {
-          var hls = new Hls();
-          hls.loadSource(select1.value);
-          hls.attachMedia(video1);
-	  hls.on(Hls.Events.MANIFEST_PARSED,function() {
+	    
+	   if (Hls.isSupported()) {
+          	var hls = new Hls();
+          	hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-oceanbeachov/chunklist.m3u8");
+          	hls.attachMedia(video1);
+	  	hls.on(Hls.Events.MANIFEST_PARSED,function() {
 				video1.play();
-	  });
+	  	});
+		 } 
+	    
+	    
+              select1.addEventListener('change', function() {
+        	if (Hls.isSupported()) {
+          	var hls = new Hls();
+          	hls.loadSource(select1.value);
+          	hls.attachMedia(video1);
+	  	hls.on(Hls.Events.MANIFEST_PARSED,function() {
+				video1.play();
+	  	});
 		 }
 	});
 </script>	    											    	
