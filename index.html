@@ -152,21 +152,43 @@
 																						     															     									     				                    <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>
 																																																				    															    															    						                   <!-- Or if you want a more recent canary version -->
 																																																																																										   															   					      								                  <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
-																																																																																																																								  															  															  										                 <video id="video3"
-																																																																																																																																																																			 															   				                                       muted="muted"></video>
-																																																																																																																																																																		 															                        <script>
-																												   var video3 = document.getElementById('video3');
-																												                 if(Hls.isSupported()) {
-																															 		      		    		  		                        var hls = new Hls();
-																																																									                                            hls.loadSource('https://cams.cdn-surfline.com/cdn-wc/wc-steamer/chunklist.m3u8');
-																																																														    															    															    															    										                                                                    hls.attachMedia(video3);
-																																																																																																																													    															    															    															    															                                                                                                hls.on(Hls.Events.MANIFEST_PARSED,function() {
-																																																																																																																																																																																																																					                                                                                                                                        video3.play();
-																																																																																																																																																																																																																																																					                                                                                                                                                                           });
-																																																																																																																																																																																																																				                                                                                                                     }
+																																																									<select id="url-selector3">
+      <option value="https://cams.cdn-surfline.com/cdn-wc/wc-capitolajetty/chunklist.m3u8">capitola</option>
+      <option value="https://cams.cdn-surfline.com/cdn-wc/wc-thehookov/playlist.m3u8">the hook</option>
+      <option value="https://cams.cdn-surfline.com/cdn-wc/wc-steamer/chunklist.m3u8" selected>steamer</option>
+    </select>
 
+			<video id="video3"
+		     	     	               muted="muted"></video>
+		            	       <script>
+  var video3 = document.getElementById('video3');
+	var select3 = document.getElementById('url-selector3');
+					       
+					       
+	 if (Hls.isSupported()) {
+          	var hls = new Hls();
+          	hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-steamer/chunklist.m3u8");
+          	hls.attachMedia(video3);
+	  	hls.on(Hls.Events.MANIFEST_PARSED,function() {
+				video3.play();
+	  	});
+		 } 				       
+					       
+					       
+          select3.addEventListener('change', function() {
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(selec3t.value);
+          hls.attachMedia(video3);
+	  hls.on(Hls.Events.MANIFEST_PARSED,function() {
+				video3.play();
+	  });
+		 }
+	});
+        
+		    </script>
 
-	      	      	      	      	                             </script>
+	      	      	      	      	                            
 
 								     							     <div id="mapid4"></div>
 
