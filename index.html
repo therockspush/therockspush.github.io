@@ -128,15 +128,15 @@
 		 } 
 	    
 	    
-              select1.addEventListener('change', function() {
-        	if (Hls.isSupported()) {
+              select2.addEventListener('change', function() {
+        	
           	var hls = new Hls();
           	hls.loadSource(select2.value);
           	hls.attachMedia(video2);
 	  	hls.on(Hls.Events.MANIFEST_PARSED,function() {
 				video2.play();
 		});
-		 }
+		 
 	      });
 
 	      	      	      	                             </script>
