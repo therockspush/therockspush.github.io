@@ -129,7 +129,7 @@
 	    
 	    
               select1.addEventListener('change', function() {
-        	
+        	if (Hls.isSupported()) {
           	var hls = new Hls();
           	hls.loadSource(select2.value);
           	hls.attachMedia(video2);
@@ -137,7 +137,7 @@
 				video2.play();
 		});
 		 }
-	);
+	      });
 
 	      	      	      	                             </script>
 
