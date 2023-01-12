@@ -38,6 +38,18 @@
 		            	       <script>
   var video = document.getElementById('video');
 	var select = document.getElementById('url-selector');
+					       
+					       
+	 if (Hls.isSupported()) {
+          	var hls = new Hls();
+          	hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-pleasurept/chunklist.m3u8");
+          	hls.attachMedia(video);
+	  	hls.on(Hls.Events.MANIFEST_PARSED,function() {
+				video.play();
+	  	});
+		 } 				       
+					       
+					       
           select.addEventListener('change', function() {
         if (Hls.isSupported()) {
           var hls = new Hls();
