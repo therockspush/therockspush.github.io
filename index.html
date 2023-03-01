@@ -4,213 +4,209 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <div id="mapid"></div>
+<div id="mapid"></div>
 
 
 
-      <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>
-          <!-- Or if you want a more recent canary version -->
-	       <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
-	             <select id="url-selector">
+<script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>
+<!-- Or if you want a more recent canary version -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
+<select id="url-selector">
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-sharppark/chunklist.m3u8">sharp park</option>
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-mavericks/chunklist.m3u8">mavericks</option>
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-pleasurept/chunklist.m3u8" selected>pleasure</option>
     </select>
 
-			<video id="video"
-		     	     	               muted="muted"></video>
-		            	       <script>
-  var video = document.getElementById('video');
-	var select = document.getElementById('url-selector');
-					       
-					       
-	 if (Hls.isSupported()) {
-          	var hls = new Hls();
-          	hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-pleasurept/chunklist.m3u8");
-          	hls.attachMedia(video);
-	  	hls.on(Hls.Events.MANIFEST_PARSED,function() {
-				video.play();
-	  	});
-		 } 				       
-					       
-					       
-          select.addEventListener('change', function() {
+<video id="video" muted="muted"></video>
+<script>
+    var video = document.getElementById('video');
+    var select = document.getElementById('url-selector');
+
+
+    if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-pleasurept/chunklist.m3u8");
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+        });
+    }
+
+
+    select.addEventListener('change', function() {
         if (Hls.isSupported()) {
-          var hls = new Hls();
-          hls.loadSource(select.value);
-          hls.attachMedia(video);
-	  hls.on(Hls.Events.MANIFEST_PARSED,function() {
-				video.play();
-	  });
-		 }
-	});
-        
-		    </script>
-																																																		    															    											    			     
- 
-
-				       			       		       	       <div id="mapid1"></div>
+            var hls = new Hls();
+            hls.loadSource(select.value);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                video.play();
+            });
+        }
+    });
+</script>
 
 
 
-										       							       	       <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>
-																		       								       				       	       <!-- Or if you want a more recent canary version -->
-																															       													       		       	       <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
+<div id="mapid1"></div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>
+<!-- Or if you want a more recent canary version -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
 <select id="url-selector1">
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-oceanbeachov/chunklist.m3u8" selected>ocean beach ov</option>
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-northoceanbeach/chunklist.m3u8">north ocean beach</option>
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-vicente/chunklist.m3u8">south ocean beach</option>
-    </select>																	       															       						       	       <video id="video1"										 muted="muted"></video>								       							       	       	       <script>
-	var video1 = document.getElementById('video1');
-	var select1 = document.getElementById('url-selector1');
-	    
-	   if (Hls.isSupported()) {
-          	var hls = new Hls();
-          	hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-oceanbeachov/chunklist.m3u8");
-          	hls.attachMedia(video1);
-	  	hls.on(Hls.Events.MANIFEST_PARSED,function() {
-				video1.play();
-	  	});
-		 } 
-	    
-	    
-              select1.addEventListener('change', function() {
-        	if (Hls.isSupported()) {
-          	var hls = new Hls();
-          	hls.loadSource(select1.value);
-          	hls.attachMedia(video1);
-	  	hls.on(Hls.Events.MANIFEST_PARSED,function() {
-				video1.play();
-	  	});
-		 }
-	});
-</script>	    											    	
+    </select> <video id="video1" muted="muted"></video>
+<script>
+    var video1 = document.getElementById('video1');
+    var select1 = document.getElementById('url-selector1');
 
-					       				       			       	         
-					       				       			       		       <div id="mapid2"></div>
+    if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-oceanbeachov/chunklist.m3u8");
+        hls.attachMedia(video1);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video1.play();
+        });
+    }
 
 
+    select1.addEventListener('change', function() {
+        if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(select1.value);
+            hls.attachMedia(video1);
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                video1.play();
+            });
+        }
+    });
+</script>
 
-														       				   					                      <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>
-																									      											      				                     <!-- Or if you want a more recent canary version -->
-																																										     															     									                    <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
-																																																									<select id="url-selector2">
+
+<div id="mapid2"></div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>
+<!-- Or if you want a more recent canary version -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
+<select id="url-selector2">
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-wedge/chunklist.m3u8" selected>wedge</option>
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-lowerjetties/chunklist.m3u8">lower jetties</option>
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-hbpierns/chunklist.m3u8">north hb pier </option>
-    </select>																	       															       						       	       <video id="video2"										 muted="muted"></video>								       							       	       	       <script>
-	var video2 = document.getElementById('video2');
-	var select2 = document.getElementById('url-selector2');
-	    
-	   if (Hls.isSupported()) {
-          	var hls = new Hls();
-          	hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-wedge/chunklist.m3u8");
-          	hls.attachMedia(video2);
-	  	hls.on(Hls.Events.MANIFEST_PARSED,function() {
-				video2.play();
-	  	});
-		 } 
-	    
-	    
-              select2.addEventListener('change', function() {
-        	
-          	var hls = new Hls();
-          	hls.loadSource(select2.value);
-          	hls.attachMedia(video2);
-	  	hls.on(Hls.Events.MANIFEST_PARSED,function() {
-				video2.play();
-		});
-		 
-	      });
+    </select> <video id="video2" muted="muted"></video>
+<script>
+    var video2 = document.getElementById('video2');
+    var select2 = document.getElementById('url-selector2');
 
-	      	      	      	                             </script>
+    if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-wedge/chunklist.m3u8");
+        hls.attachMedia(video2);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video2.play();
+        });
+    }
 
 
+    select2.addEventListener('change', function() {
+
+        var hls = new Hls();
+        hls.loadSource(select2.value);
+        hls.attachMedia(video2);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video2.play();
+        });
+
+    });
+</script>
 
 
 
-							     						     					     				     <div id="mapid3"></div>
+
+
+<div id="mapid3"></div>
 
 
 
-																						     															      <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>	
+<script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>
 <!-- Or if you want a more recent canary version -->
-																																										     															     									                    <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
 <select id="url-selector3">
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-capitolajetty/playlist.m3u8">capitola</option>
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-thehookov/playlist.m3u8">the hook</option>
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-steamer/chunklist.m3u8" selected>steamer</option>
     </select>
 
-			<video id="video3"
-		     	     	               muted="muted"></video>
-		            	       <script>
-  var video3 = document.getElementById('video3');
-	var select3 = document.getElementById('url-selector3');
-					       
-					       
-	 if (Hls.isSupported()) {
-          	var hls = new Hls();
-          	hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-steamer/chunklist.m3u8");
-          	hls.attachMedia(video3);
-	  	hls.on(Hls.Events.MANIFEST_PARSED,function() {
-				video3.play();
-	  	});
-		 } 				       
-					       
-					       
-          select3.addEventListener('change', function() {
-        if (Hls.isSupported()) {
-          var hls = new Hls();
-          hls.loadSource(select3.value);
-          hls.attachMedia(video3);
-	  hls.on(Hls.Events.MANIFEST_PARSED,function() {
-				video3.play();
-	  });
-		 }
-	});
-        
-		    </script>
+<video id="video3" muted="muted"></video>
+<script>
+    var video3 = document.getElementById('video3');
+    var select3 = document.getElementById('url-selector3');
 
-	      	      	      	      	                            
+
+    if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-steamer/chunklist.m3u8");
+        hls.attachMedia(video3);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video3.play();
+        });
+    }
+
+
+    select3.addEventListener('change', function() {
+        if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(select3.value);
+            hls.attachMedia(video3);
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                video3.play();
+            });
+        }
+    });
+</script>
+
+
 <div id="mapid4"></div>
 
 
 
-																						     															      <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>										
+<script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>
 <select id="url-selector4">
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-pismopier/playlist.m3u8">pismo</option>
       
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-saltcreek/chunklist.m3u8" selected>salt</option>
     </select>
 
-			<video id="video4"
-		     	     	               muted="muted"></video>
-		            	       <script>
-  var video4 = document.getElementById('video4');
-	var select4 = document.getElementById('url-selector4');
-					       
-					       
-	 if (Hls.isSupported()) {
-          	var hls = new Hls();
-          	hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-saltcreek/chunklist.m3u8");
-          	hls.attachMedia(video4);
-	  	hls.on(Hls.Events.MANIFEST_PARSED,function() {
-				video4.play();
-	  	});
-		 } 				       
-					       
-					       
-          select4.addEventListener('change', function() {
+<video id="video4" muted="muted"></video>
+<script>
+    var video4 = document.getElementById('video4');
+    var select4 = document.getElementById('url-selector4');
+
+
+    if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-saltcreek/chunklist.m3u8");
+        hls.attachMedia(video4);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video4.play();
+        });
+    }
+
+
+    select4.addEventListener('change', function() {
         if (Hls.isSupported()) {
-          var hls = new Hls();
-          hls.loadSource(select4.value);
-          hls.attachMedia(video4);
-	  hls.on(Hls.Events.MANIFEST_PARSED,function() {
-				video4.play();
-	  });
-		 }
-	});
-        
-		    </script>
+            var hls = new Hls();
+            hls.loadSource(select4.value);
+            hls.attachMedia(video4);
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                video4.play();
+            });
+        }
+    });
+</script>
+
 </html>
