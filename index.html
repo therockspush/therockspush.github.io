@@ -171,27 +171,44 @@
 		    </script>
 
 	      	      	      	      	                            
-
-								     							     <div id="mapid4"></div>
-
+<div id="mapid4"></div>
 
 
-															     							     					     <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>
-																											     												     			     					     <!-- Or if you want a more recent canary version -->
-																																															     															     										     					     <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
-																																																																													     															     															     					     <video id="video4"
-																	   															     				     		                muted="muted"></video>
-																																																																																																																     															     															     					                    <script>
+
+																						     															      <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>										
+<select id="url-selector4">
+      <option value="https://cams.cdn-surfline.com/cdn-wc/wc-pismopier/playlist.m3u8">pismo</option>
+      
+      <option value="https://cams.cdn-surfline.com/cdn-wc/wc-saltcreek/chunklist.m3u8" selected>salt</option>
+    </select>
+
+			<video id="video4"
+		     	     	               muted="muted"></video>
+		            	       <script>
   var video4 = document.getElementById('video4');
-            if(Hls.isSupported()) {
-		    		  			                      var hls = new Hls();
-									      							      					      			                          hls.loadSource('https://cams.cdn-surfline.com/cdn-wc/wc-saltcreek/chunklist.m3u8');
-																											  															  											  				                          hls.attachMedia(video4);
-																																																												  															  															  									                              hls.on(Hls.Events.MANIFEST_PARSED,function() {
-																																																																																																							      															      															      													                                                video4.play();
-																																																																																																																																																																							                                            });
-																																																																																																						      															      															      												                                   }
-
-
-	      	      	      	                     </script>
+	var select4 = document.getElementById('url-selector4');
+					       
+					       
+	 if (Hls.isSupported()) {
+          	var hls = new Hls();
+          	hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-saltcreek/chunklist.m3u8");
+          	hls.attachMedia(video4);
+	  	hls.on(Hls.Events.MANIFEST_PARSED,function() {
+				video4.play();
+	  	});
+		 } 				       
+					       
+					       
+          select4.addEventListener('change', function() {
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(select4.value);
+          hls.attachMedia(video4);
+	  hls.on(Hls.Events.MANIFEST_PARSED,function() {
+				video4.play();
+	  });
+		 }
+	});
+        
+		    </script>
 </html>
