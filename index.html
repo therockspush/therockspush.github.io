@@ -3,46 +3,49 @@
 <meta name="referrer" content="no-referrer">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<div id="mapid"></div>
-
+   <div id="mapid"></div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>
-<!-- Or if you want a more recent canary version -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
-<select id="url-selector">
+
+      <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>
+          <!-- Or if you want a more recent canary version -->
+	       <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
+	             <select id="url-selector">
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-sharppark/chunklist.m3u8">sharp park</option>
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-mavericks/chunklist.m3u8">mavericks</option>
-      <option value="https://cams.cdn-surfline.com/cdn-wc/wc-pleasurept/chunklist.m3u8" selected>pleasure</option>
+      <option value="https://cams.cdn-surfline.com/cdn-wc/wc-pleasureptov/chunklist.m3u8" selected>pleasure</option>
     </select>
 
-<video id="video" muted="muted"></video>
+			<video id="video" muted="muted"></video>
 <script>
-    var video = document.getElementById('video');
-    var select = document.getElementById('url-selector');
+  var video = document.getElementById('video');
+  var select = document.getElementById('url-selector');
+  var hls;
+  
+  if (Hls.isSupported()) {
+    hls = new Hls();
+    hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-pleasureptov/chunklist.m3u8");
+    hls.attachMedia(video);
+  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = "https://cams.cdn-surfline.com/cdn-wc/wc-pleasureptov/chunklist.m3u8";
+  }
 
-
-    if (Hls.isSupported()) {
-        var hls = new Hls();
-        hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-pleasurept/chunklist.m3u8");
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, function() {
-            video.play();
-        });
-    }
-
-
-    select.addEventListener('change', function() {
-        if (Hls.isSupported()) {
-            var hls = new Hls();
-            hls.loadSource(select.value);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                video.play();
-            });
-        }
+  if (hls) {
+    hls.on(Hls.Events.MANIFEST_PARSED, function() {
+      video.play();
     });
+  }
+
+  select.addEventListener('change', function() {
+    if (Hls.isSupported()) {
+      hls = new Hls();
+      hls.loadSource(select.value);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, function() {
+        video.play(); 
+      });
+    }
+  });
 </script>
 
 
