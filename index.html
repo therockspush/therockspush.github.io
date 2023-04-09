@@ -216,6 +216,12 @@
                 video4.play();
             });
         }
+	    else if (video6.canPlayType('application/vnd.apple.mpegurl')) {
+    video6.src = select4.value;
+    video6.addEventListener('canplay',function() {
+      video6.play();
+    });
+  }
     });
 </script>
 
