@@ -235,15 +235,44 @@
 
 
     
- // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
- // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
- // This is using the built-in support of the plain video element, without using hls.js.
- // Note: it would be more normal to wait on the 'canplay' event below however on Safari (where you are most likely to find built-in HLS support) the video.src URL must be on the user-driven
- // white-list before a 'canplay' event will be emitted; the last video event that can be reliably listened-for when the URL is not on the white-list is 'loadedmetadata'.
+
    if (video6.canPlayType('application/vnd.apple.mpegurl')) {
-    video6.src = 'https://cams.cdn-surfline.com/cdn-wc/wc-saltcreek/chunklist.m3u8';
+    video6.src = 'https://cams.cdn-surfline.com/cdn-wc/wc-pleasureptov/chunklist.m3u8';
     video6.addEventListener('canplay',function() {
       video6.play();
+    });
+  }
+        </script>
+
+
+<video id="video7" playsinline autoplay></video>
+<script>
+    var video7 = document.getElementById('video7');
+    
+
+
+    
+ 
+   if (video7.canPlayType('application/vnd.apple.mpegurl')) {
+    video7.src = 'https://cams.cdn-surfline.com/cdn-wc/wc-oceanbeachov/chunklist.m3u8';
+    video7.addEventListener('canplay',function() {
+      video7.play();
+    });
+  }
+        </script>
+
+<video id="video8" playsinline autoplay></video>
+<script>
+    var video8 = document.getElementById('video8');
+    
+
+
+    
+ 
+   if (video8.canPlayType('application/vnd.apple.mpegurl')) {
+    video8.src = 'https://cams.cdn-surfline.com/cdn-wc/wc-steamer/chunklist.m3u8';
+    video8.addEventListener('canplay',function() {
+      video8.play();
     });
   }
         </script>
