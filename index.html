@@ -220,7 +220,7 @@
 </script>
 
 
-<video id="video6" muted="muted"></video>
+<video id="video6" muted="muted" controls></video>
 <script>
     var video6 = document.getElementById('video6');
     
@@ -241,7 +241,7 @@
  // white-list before a 'canplay' event will be emitted; the last video event that can be reliably listened-for when the URL is not on the white-list is 'loadedmetadata'.
   else if (video6.canPlayType('application/vnd.apple.mpegurl')) {
     video6.src = '"https://cams.cdn-surfline.com/cdn-wc/wc-saltcreek/chunklist.m3u8"';
-    video6.addEventListener('loadedmetadata',function() {
+    video6.addEventListener('canplay',function() {
       video6.play();
     });
   }
