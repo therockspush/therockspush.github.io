@@ -219,33 +219,24 @@
     });
 </script>
 
-<div id="mapid6"></div>
+<div class="video">
+        <video id="video6" width="800" ></video>
+        <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+        <!-- Or if you want a more recent alpha version -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@alpha"></script> -->
+        <script>
+            var video6 = document.getElementById("video6");
+            var videoSrc = "https://cams.cdn-surfline.com/cdn-wc/wc-saltcreek/chunklist.m3u8";
+            if (Hls.isSupported()) {
+                var hls = new Hls();
+                hls.loadSource(videoSrc);
+                hls.attachMedia(video6);
+            }
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>
-<select id="url-selector6">
-      <option value="https://cams.cdn-surfline.com/cdn-wc/wc-pismopier/playlist.m3u8">pismo</option>
-      
-      <option value="https://cams.cdn-surfline.com/cdn-wc/wc-saltcreek/chunklist.m3u8" selected>salt</option>
-    </select>
-
-<video id="video6" muted="muted"></video>
-    <script>
-      var video6 = document.getElementById("video6");
-      var videoSrc6 = "https://cams.cdn-surfline.com/cdn-wc/wc-saltcreek/chunklist.m3u8";
-
-      if (Hls.isSupported()) {
-        var hls6 = new Hls();
-        hls6.loadSource(videoSrc6);
-        hls6.attachMedia(video6);
-        hls6.on(Hls.Events.MANIFEST_PARSED, function() {
-            video6.play();
-	});
-      }
-      else if (video6.canPlayType("application/vnd.apple.mpegurl")) {
-        video6.src = videoSrc6;
-      }
-    </script>
+            else if (video6.canPlayType("application/vnd.apple.mpegurl")) {
+                video6.src = videoSrc;
+            }
+        </script>
+    </div>
 
 </html>
