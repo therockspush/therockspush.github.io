@@ -205,6 +205,12 @@
             video4.play();
         });
     }
+	 else if (video4.canPlayType('application/vnd.apple.mpegurl')) {
+    video4.src = 'https://cams.cdn-surfline.com/cdn-wc/wc-saltcreek/chunklist.m3u8';
+    video4.addEventListener('canplay',function() {
+      video4.play();
+    });
+  }
 
 
     select4.addEventListener('change', function() {
@@ -216,12 +222,7 @@
                 video4.play();
             });
         }
-	    else if (video4.canPlayType('application/vnd.apple.mpegurl')) {
-    video4.src = select4.value;
-    video4.addEventListener('canplay',function() {
-      video4.play();
-    });
-  }
+	   
     });
 </script>
 
