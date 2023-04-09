@@ -220,21 +220,20 @@
 </script>
 
 
-        <video id="video6" width="800" ></video>
-        <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-        <!-- Or if you want a more recent alpha version -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@alpha"></script> -->
-        <script>
-            var video6 = document.getElementById("video6");
-             
-            if (Hls.isSupported()) {
-                var hls = new Hls();
-                hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-saltcreek/chunklist.m3u8");
-                hls.attachMedia(video6);
-            hls.on(Hls.Events.MANIFEST_PARSED,function() {
-      video6.play();
-  });
- }
+<video id="video6" muted="muted"></video>
+<script>
+    var video6 = document.getElementById('video6');
+    
+
+
+    if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-saltcreek/chunklist.m3u8");
+        hls.attachMedia(video6);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video6.play();
+        });
+    }
  // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
  // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
  // This is using the built-in support of the plain video element, without using hls.js.
