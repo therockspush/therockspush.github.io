@@ -4,9 +4,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<video id="video" controls autoplay>
-      <source src="https://cams.cdn-surfline.com/cdn-wc/wc-pleasureptov/chunklist.m3u8" type="application/x-mpegURL">
-    </video>
+
    <div id="mapid"></div>
 
 
@@ -30,15 +28,20 @@
     hls = new Hls();
     hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-pleasureptov/chunklist.m3u8");
     hls.attachMedia(video);
-  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = "https://cams.cdn-surfline.com/cdn-wc/wc-pleasureptov/chunklist.m3u8";
-  }
-
-  if (hls) {
     hls.on(Hls.Events.MANIFEST_PARSED, function() {
+      video.play();
+      });
+  }
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = "https://cams.cdn-surfline.com/cdn-wc/wc-pleasureptov/chunklist.m3u8";
+   video.addEventListener('loadedmetadata', function() {
       video.play();
     });
   }
+
+  
+    
+  
 
   select.addEventListener('change', function() {
     if (Hls.isSupported()) {
