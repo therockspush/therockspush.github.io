@@ -261,11 +261,7 @@
   }
         </script>
 
-<select id="url-selector8">
-      <option value="https://cams.cdn-surfline.com/cdn-wc/wc-pismopier/playlist.m3u8">pismo</option>
-      
-      <option value="https://cams.cdn-surfline.com/cdn-wc/wc-saltcreekpoint/chunklist.m3u8" selected>salt</option>
-    </select>
+
 
 <video id="video8" playsinline autoplay></video>
 <script>
@@ -273,17 +269,33 @@
     var select8 = document.getElementById('url-selector8');
 
 
-    select8.addEventListener('change', function() {
+   
  
    if (video8.canPlayType('application/vnd.apple.mpegurl')) {
-    video8.src = select8.value;
+    video8.src = 'https://cams.cdn-surfline.com/cdn-wc/wc-steamer/chunklist.m3u8';
     video8.addEventListener('canplay',function() {
       video8.play();
     });
   }
-	    });
+	    
         </script>
 
+
+<video id="video9" playsinline autoplay></video>
+<script>
+    var video9 = document.getElementById('video9');
+    
+
+
+    
+ 
+   if (video9.canPlayType('application/vnd.apple.mpegurl')) {
+    video9.src = 'https://cams.cdn-surfline.com/cdn-wc/wc-oceanbeachov/chunklist.m3u8';
+    video9.addEventListener('canplay',function() {
+      video9.play();
+    });
+  }
+        </script>
 
     
 
