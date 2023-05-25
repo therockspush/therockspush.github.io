@@ -308,14 +308,14 @@
 
     if (Hls.isSupported()) {
         var hls = new Hls();
-        hls.loadSource("https://s35.ipcamlive.com/streams/23tvrsbk2xynpt7zx/stream.m3u8");
+        hls.loadSource("https://s35.ipcamlive.com/streams/23su9nlcwrwoysjif/stream.m3u8");
         hls.attachMedia(videoguam);
         hls.on(Hls.Events.MANIFEST_PARSED, function() {
             videoguam.play();
         });
     }
 	 else if (videoguam.canPlayType('application/vnd.apple.mpegurl')) {
-    videoguam.src = 'https://s35.ipcamlive.com/streams/23tvrsbk2xynpt7zx/stream.m3u8';
+    videoguam.src = 'https://s35.ipcamlive.com/streams/23su9nlcwrwoysjif/stream.m3u8';
     videoguam.addEventListener('canplay',function() {
       videoguam.play();
     });
