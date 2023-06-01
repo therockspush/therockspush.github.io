@@ -75,7 +75,7 @@
 
     if (Hls.isSupported()) {
         var hls = new Hls();
-        hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-oceanbeachov/chunklist.m3u8");
+        hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-northoceanbeach/chunklist.m3u8");
         hls.attachMedia(video1);
         hls.on(Hls.Events.MANIFEST_PARSED, function() {
             video1.play();
