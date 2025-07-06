@@ -10,8 +10,8 @@
 	         
 
 	             <select id="url-selector">
-      <option value="https://crossorigin.me/https://cams.cdn-surfline.com/cdn-wc/wc-sharppark/chunklist.m3u8">sharp park</option>
-      <option value="https://crossorigin.me/https://cams.cdn-surfline.com/cdn-wc/wc-mavericks/chunklist.m3u8">mavericks</option>
+      <option value="https://cams.cdn-surfline.com/cdn-wc/wc-sharppark/chunklist.m3u8">sharp park</option>
+      <option value="https://cams.cdn-surfline.com/cdn-wc/wc-mavericks/chunklist.m3u8">mavericks</option>
       <option value="https://cams.cdn-surfline.com/cdn-wc/wc-pleasureptov/chunklist.m3u8" selected>pleasure</option>
     </select>
 
@@ -23,7 +23,7 @@
   
   if (Hls.isSupported()) {
     hls = new Hls();
-    hls.loadSource("https://crossorigin.me/https://cams.cdn-surfline.com/cdn-wc/wc-pleasureptov/chunklist.m3u8");
+    hls.loadSource("https://cams.cdn-surfline.com/cdn-wc/wc-pleasureptov/chunklist.m3u8");
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED, function() {
       video.play();
