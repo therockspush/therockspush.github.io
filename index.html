@@ -114,6 +114,8 @@ recordBtn.onclick=async()=>{
    recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
    recorder.onstop=async()=>{
      stream.getTracks().forEach(t=>t.stop());
+     recordBtn.textContent="● Start Recording";
+     recordBtn.classList.remove("recording");
      recordingBlob=new Blob(chunks,{type:recorder.mimeType});
      original.src=URL.createObjectURL(recordingBlob);
      audioBuffer=await new AudioContext().decodeAudioData(await recordingBlob.arrayBuffer());
